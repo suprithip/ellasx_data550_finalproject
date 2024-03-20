@@ -1,5 +1,4 @@
-# DATA550 Final Project
-## Diabetes Predictor
+# DATA550 Final Project: Diabetes Predictor
 
 ------------------------------------------------------------------------
 
