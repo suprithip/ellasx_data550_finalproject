@@ -1,8 +1,8 @@
-# DATA550 Final Project: Diabetes Predictor
+# DATA550 Final Project: Diabetes Predictors
 
 ------------------------------------------------------------------------
 
-## Initial code description
+##File descriptions
 
 `code/01_make_output1.R`
 
