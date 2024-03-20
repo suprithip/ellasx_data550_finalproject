@@ -22,7 +22,8 @@
 
   - contains rules for building the report
   - `make .outputs` will generate the `.rds` and `.png` files needed to compile the report
-
+  - `make report.html` will generate the final report
+  - `make clean` will clean all outputs
 
 
 
