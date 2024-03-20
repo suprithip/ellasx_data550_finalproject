@@ -2,7 +2,7 @@
 
 ------------------------------------------------------------------------
 
-##File descriptions
+## File descriptions
 
 `code/01_make_output1.R`
 
