@@ -1,0 +1,52 @@
+---
+title: "Data 550 Final Project"
+author: "Ella Shen"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+library(knitr) # global code chunk setting
+opts_chunk$set( 
+  echo = FALSE, warning = FALSE, message = FALSE
+)
+
+here::i_am("final_report.Rmd")
+```
+
+## Introduction
+This data set is originally from the National Institute of Diabetes and Digestive and Kidney Diseases (NIDDK). All participants of the study are females, at least 21 years old, and of Pima Indian heritage. There are a total of 768 observations in our dataset. The data set comprises eight independent variables, including pregnancies, blood pressure, BMI, insulin, and etc. It also includes one dependent variable, which is the outcome that whether or not this individual has diabetes. Our objective is to predict diagnostically whether an individual has diabetes based on certain diagnostic measurements included in the dataset. Presumably, we are able to construct a logistic regression model based on this dataset.
+
+## Data Loading
+```{r Data Loading}
+diabetes <- read.csv("~/Desktop/DATA550/final_proj/data/diabetes.csv")
+kable(diabetes[1:5,1:9],
+      caption = "Predict Diabetes")
+```
+
+This is a preview of the first five rows of the data set we use for analysis.
+
+
+## Table
+```{r Summary Table}
+mytable <- readRDS(
+  file = here::here("output/regression_table.rds")
+)
+
+mytable
+```
+
+This table above summarizes the result of the logistic model using all eight independent variables to predict the diabetes outcome. As shown in the table, characteristics, including number of pregnancies, blood glucose level, blood pressure, BMI, and diabetes percentage, have p-values lower than 0.05, which indicate the difference between the mean values of each of those characteristics for non-diabetic individuals and for diabetic individuals is statistically significant. In other words, it suggests they are stronger predictors of diabetes outcomes.
+
+## Figure
+
+```{r Figure}
+#| fig.align = "center",
+#| out.width = "600px",
+knitr::include_graphics(
+  here::here("output/boxplots.png")
+)
+```
+
+This figure is composed of the box plots comparing means of the top four predictive characteristics, given their p-values in logistic model, between non-diabetic and diabetic individuals. The figure visualizes the difference in means of each characteristic for different diabetic outcomes. 
+
