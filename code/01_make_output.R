@@ -7,7 +7,7 @@ library(ggpubr)
 
 # Regression model
 
-diabetes <- read.csv("~/Desktop/DATA550/final_proj/data/diabetes.csv")
+diabetes <- read.csv(here::here("data/diabetes.csv"))
 
 model <- glm(
   Outcome ~ Pregnancies + Glucose + BloodPressure + SkinThickness + Age + Insulin + BMI + DiabetesPedigreeFunction, 
@@ -74,3 +74,4 @@ ggsave(
   plot = last_plot(),
   device = "png"
 )
+
